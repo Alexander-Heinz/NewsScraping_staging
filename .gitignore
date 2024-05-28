@@ -1,0 +1,7 @@
+*.env
+*.pub
+*.pem
+github-alex-heinz
+frontend/log/
+frontend/log/access.log
+backend/__pycache__
