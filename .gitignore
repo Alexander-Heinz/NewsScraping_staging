@@ -4,4 +4,6 @@
 github-alex-heinz
 frontend/log/
 frontend/log/access.log
+backend/app/__pycache__
+
 backend/__pycache__

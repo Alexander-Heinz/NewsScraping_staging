@@ -52,7 +52,3 @@ def sentiment():
     print(sentiment_score)
 
     return sentiment_score
-
-
-
-
