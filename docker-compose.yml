@@ -1,0 +1,41 @@
+version: "3"
+services:
+  frontend:
+    restart: unless-stopped
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 8000:8000
+      - 443:443
+    volumes:
+      - ./frontend/log/:/var/log/nginx      
+      - ./certs/:/etc/letsencrypt/live
+  backend:
+    restart: unless-stopped
+    container_name: backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    # expose:
+    # - 5000
+   # env_file:
+    #  - backend.env
+#   mongo:
+#     restart: always
+#     image: mongo:4.2.0
+#     volumes:
+#       - mongo_data:/data/db
+#     networks:
+#       - express-mongo
+#     expose:
+#       - 27017
+# networks:
+#   react-express:
+#   express-mongo:
+# volumes:
+#   mongo_data:
